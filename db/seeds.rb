@@ -1,12 +1,27 @@
-Faker::TvShows::Simpsons.character
-
-
+require 'faker'
 
 500.times do
-  character = Faker::TvShows::Simpsons.character
-  next if Character.find_by(name: Faker::TvShows::Simpsons.character)
+  name = Faker::Superhero.power
+  unless Power.find_by(name: name)
+    power = Power.create!(
+      name: name
+    )
+  end
 
-  Character.create!(
-    name: character
+  name = Faker::TvShows::Simpsons.character
+  unless Character.find_by(name: name)
+    Character.create!(
+      name: name
+    )
+  end
+end
+
+
+Character.find_each do |character|
+  next if character.powers.any?
+
+  CharacterPower.create!(
+    character: character,
+    power: Power.all.sample
   )
 end

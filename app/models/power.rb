@@ -1,4 +1,5 @@
 class Power < ApplicationRecord
-  belongs_to :character
+  has_many :character_powers, dependent: :destroy
+  has_many :characters, through: :character_powers
   mount_uploader :photo, PhotoUploader
 end

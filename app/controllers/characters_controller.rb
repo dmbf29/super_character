@@ -1,5 +1,5 @@
 class CharactersController < ApplicationController
   def index
-    @character = Character.all
+    @characters = Character.order(name: :asc)
   end
 end

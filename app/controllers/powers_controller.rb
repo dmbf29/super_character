@@ -1,2 +1,0 @@
-class PowersController < ApplicationController
-end
