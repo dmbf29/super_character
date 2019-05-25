@@ -1,23 +1,8 @@
-<div class="container mt-3">
-  <div class="row">
-    <div class="col-12">
-
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="cards">
-      <% @characters.each do |character| %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(character.photo) %>">
-          <%= character.name %>
-          <%= link_to "+", new_character_character_power_path(character), class: "card-add-power" %>
-          <div class="card-tags">
-            <% character.powers.each do |power| %>
-              <span><%= power.name %></span>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
+<%= render 'banner_card' %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="cards" id="characters">
+      <%= render 'characters/list' %>
     </div>
   </div>
 </div>

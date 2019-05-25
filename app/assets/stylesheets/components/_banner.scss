@@ -1,0 +1,47 @@
+.banner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.banner-form {
+  margin-top: -80px;
+  margin-bottom: 20px;
+}
+
+@media(max-width: 992px) {
+  .banner {
+    img {
+      width: 900px
+    }
+  }
+}
+
+@media(max-width: 768px) {
+  .banner {
+    img {
+      width: 680px
+    }
+  }
+}
+
+@media(max-width: 600px) {
+  .banner {
+    input {
+      width: 150px
+    }
+  }
+}
+
+@media(max-width: 500px) {
+  .banner {
+    img {
+      width: 400px
+    }
+  }
+}

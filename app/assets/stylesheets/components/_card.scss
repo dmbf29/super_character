@@ -13,6 +13,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   background-repeat: no-repeat;
   position: relative;
+  min-width: 360px;
 }
 
 .cards {
@@ -65,5 +66,17 @@
   }
   a {
     color: $blue;
+  }
+}
+
+@media(max-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
   }
 }

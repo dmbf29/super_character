@@ -1,0 +1,7 @@
+<div class="banner">
+  <%= image_tag 'banner.jpg'  %>
+  <%= form_tag('/search', { method: :get,remote: true,  class: "form-inline banner-form"}) do %>
+    <%= text_field_tag :query, params[:query], placeholder: "Homer Simpson...", class: 'form-control' %>
+    <%= button_tag :search, class: 'btn btn-primary' %>
+  <% end %>
+</div>

@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row justify-content-center m-5">
+    <div class="col-10 col-sm-10">
+      <h1>Add power to <%= @character.name %></h1>
+      <%= simple_form_for [@character, @character_power] do |f| %>
+        <%= f.association :power %>
+        <%= f.button :submit, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
