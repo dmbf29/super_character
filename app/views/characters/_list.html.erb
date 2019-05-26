@@ -21,8 +21,8 @@
             </button>
           </div>
           <div class="modal-body">
-            <%= simple_form_for [character, @character_power] do |f| %>
-              <%= f.association :power, input_html: {
+            <%= simple_form_for [character, @character_power], defaults: { input_html: { class: 'form-inline' } } do |f| %>
+              <%= f.association :power, collection: @powers, input_html: {
                class: 'select2'} %>
               <%= f.submit "Add power", class: "btn btn-primary" %>
             <% end %>
