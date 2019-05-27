@@ -1,5 +1,11 @@
 class CharactersController < ApplicationController
   def index
+    if params[:query].blank?
+      @characters = Character.order(name: :asc)
+    else
+      @characters = Character.where(name: params[:query]).order(name: :asc)
+    end
+    @powers = Power.order(name: :asc)
     @character_power = CharacterPower.new
     @powers = Power.order(name: :asc)
     @characters = Character.order(name: :asc)
@@ -8,7 +14,11 @@ class CharactersController < ApplicationController
   def search
     @character_power = CharacterPower.new
     @powers = Power.order(name: :asc)
-    @characters = Character.order(name: :asc)
+    if params[:query].blank?
+      @characters = Character.order(name: :asc)
+    else
+      @characters = Character.where(name: params[:query]).order(name: :asc)
+    end
     respond_to do |format|
       format.html { redirect_to characters_path }
       format.js
