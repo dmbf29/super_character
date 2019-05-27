@@ -7,6 +7,8 @@ class CharactersController < ApplicationController
     end
     @powers = Power.order(name: :asc)
     @character_power = CharacterPower.new
+    @powers = Power.order(name: :asc)
+    @characters = Character.order(name: :asc)
   end
 
   def search
